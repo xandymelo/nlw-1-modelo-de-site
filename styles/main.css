@@ -1,0 +1,152 @@
+:root {
+    --title-color:rgb(95, 6, 6);
+    --primary-color: rgb(230, 211, 104);
+}
+
+
+
+html {
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background: #f0ecec;
+    -webkit-font-smoothing: antialiassed;
+}
+
+/* BOX MODEL
+modelo de caixa
+toda caixa tem largura, altura, espaçamento, preenchimento, vordas, cor, fundo
+*/
+
+ h1,h2,h3,h4,h5,h6 {
+    color: var(--title-color);
+    font-family: 'Ubuntu', sans-serif;
+} 
+
+a {
+    text-decoration: none; /* tirar a linha em baixo */
+}
+#page-home{
+    height: 100vh; /*vh (h de height) é dinâmico, como se fosse 100% */
+    background: url('../assets/backgroundteste.svg') no-repeat;
+    background-position: 30vw top; /* vw (w de weight)jogar um pouco para a direita */
+}
+
+
+
+#page-home header {
+    display: flex; /* ficar um elemento ao lado do outro */
+    align-items: center; /* alinhas os elementos*/
+    justify-content: space-between; /* colocar um espaço entre os elementos*/
+    margin-top: 48px; 
+
+}
+
+#page-home .content {
+    width: 90%; /* largura */
+    max-width: 1100px; /* limite da largura*/
+    margin: 0 auto; /*  centralizar o conteúdo, com margem, dois valores: o primeiro é top e bottom, o segund
+    valor é left e right, se for três valores, top, left e right, bottom */
+     
+
+}/* ponto é referência para nome da classe*/
+
+#page-home header a {
+    display: flex;
+    color: var(--title-color);
+    font-weight: 700; /* negrito */
+
+}
+
+#page-home header a span {
+    margin-right: 16px;
+    display: flex;
+    
+    background-image: url('../assets/log-in.svg');
+    width: 20px;
+    height: 20px;
+} /* imagem ao lado da mensagem do a */ 
+
+#page-home main {
+    max-width: 560px;
+    flex: 1; /* ocupa todo o espaço, não só o qual o elemento ocupa */
+    display: flex; /* ficar tudo em uma direção, a direção padrão é linha */
+    flex-direction: column; /* mudar a direção padrão para coluna*/
+    justify-content: center; /* colocar os elementos no centro */
+}
+
+#page-home main h1 {
+    font-size: 54px;
+    margin-top: 150px;
+}
+
+#page-home main p {
+    font-size: 24px;
+    line-height: 38px; /* espaçamento */
+    margin-top: 10px;
+}
+
+#page-home main a {
+    width: 100%;
+    max-width: 360px;
+    height: 72px;
+    border-radius: 8px; /* arrendondar bordas */
+
+    display: flex;
+    align-items: center; /* colocar as palavras no centro */
+    margin-top: 40px;
+    transition: 400ms; /* transição de cor */
+    color: white;
+
+    background: var(--primary-color);
+}
+
+#page-home main a:hover {
+    background-color: rgb(224, 199, 52);
+}/*:hover é quando o mouse ta em cima */
+
+#page-home main a span {
+    width: 72px;
+    height: 72px;
+    background-color: rgba(0, 0, 0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-home main a span::after {
+    content: "";
+    background-image: url(../assets/search.svg);
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main a strong {
+    flex: 1;
+    color: white;
+    text-align: center;
+}
+
+
+@media (max-width: 900px) {
+    #page-home {
+        background-position-x: 70vw ; /* jogar o background pro lado quando a tela tiver muito pequena */
+    }
+
+    #page-home .content {
+        align-items: center;
+        text-align: center;
+    }
+    #page-home header a {
+        position: absolute; /* colocar uma coisa em cima da outra, como se fosse uma folha de papel em cima da outra */
+        bottom: 48px;
+
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+#page-home main {
+    align-items: center;
+}
